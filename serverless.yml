@@ -1,0 +1,9 @@
+provider:
+  name: aws
+  runtime: provided.al2      # PHP custom runtime
+  region: us-east-1
+  environment:
+    DB_HOST: ls-a5253c7856e45cd6035977cf8423616a572eba3a.cw92gkc8qp8p.us-east-1.rds.amazonaws.com
+    DB_NAME: Database-1     # or your chosen DB name
+    DB_USER: dbmasteruser
+    DB_PASS: Your!!Stro09gPss123!
