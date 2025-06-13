@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: 'Serverless WordPress texturize function'
+Description: 'Serverless WordPress texturize function (zip build, AL2 custom runtime)'
 
 Resources:
   MyFunction:
