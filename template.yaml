@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: 'Serverless WordPress texturize function (zip build, AL2 custom runtime)'
+Description: 'Serverless WordPress texturize function (ZIP build, AL2 + Bref PHP-FPM layer)'
 
 Resources:
   MyFunction:
@@ -14,9 +14,10 @@ Resources:
       Handler: index.php
       Runtime: provided.al2
       Timeout: 30        # API Gateway max timeout is 30s
-      MemorySize: 1024   # adjust for PHP performance
+      MemorySize: 2048   # adjust for PHP performance
       Layers:
-        - arn:aws:lambda:us-east-1:209497400698:layer:php-73-fpm:4
+        # Bref’s official PHP-FPM layer (x86_64, us-east-1, PHP 8.0, version 21)
+        - arn:aws:lambda:us-east-1:534081306603:layer:php-80-fpm:21
       Events:
         HttpRoot:
           Type: Api
